@@ -9,10 +9,14 @@ public class CheckGuest {
                 "bebe-vio", "luis", "parids-zarei", "martina-maccherone", "rachel-zeilic" };
         Scanner input = new Scanner(System.in);
 
-        String userAttempt;
+        String userAnswer;
 
         System.out.print("Inserisci il tuo nome e cognome: ");
-        userAttempt = input.nextLine();
+        userAnswer = input.nextLine();
+
+        String userAttempt = userAnswer.trim().replace(" ", "-").toLowerCase();
+
+        System.out.println(userAttempt);
     }
 
 }
