@@ -17,11 +17,22 @@ public class CheckGuest {
         String userAttempt = userAnswer.trim().replace(" ", "-").toLowerCase();
 
         boolean isAnEnvoy = false;
+        int index = 0;
 
-        for (int i = 0; i < guestList.length; i++) {
-            if (userAttempt.equals(guestList[i])) {
+        /*
+         * for (int i = 0; i < guestList.length; i++) {
+         * if (userAttempt.equals(guestList[i])) {
+         * isAnEnvoy = true;
+         * }
+         * }
+         */
+
+        while (!isAnEnvoy && index < guestList.length) {
+            if (userAttempt.equals(guestList[index])) {
                 isAnEnvoy = true;
             }
+            index++;
+
         }
 
         if (isAnEnvoy) {
