@@ -16,7 +16,19 @@ public class CheckGuest {
 
         String userAttempt = userAnswer.trim().replace(" ", "-").toLowerCase();
 
-        System.out.println(userAttempt);
+        boolean isAnEnvoy = false;
+
+        for (int i = 0; i < guestList.length; i++) {
+            if (userAttempt.equals(guestList[i])) {
+                isAnEnvoy = true;
+            }
+        }
+
+        if (isAnEnvoy) {
+            System.out.println("L'utente è nella lista invitati");
+        } else {
+            System.out.println("L'utente non è nella lista degli invitati");
+        }
     }
 
 }
