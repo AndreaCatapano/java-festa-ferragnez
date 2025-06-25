@@ -5,14 +5,19 @@ import java.util.Scanner;
 public class CheckGuest {
 
     public static void main(String[] args) {
-        String[] guestList = { "dua-lipa", "paris-hilton", "manuel-agnelli", "j-ax", "francesco-totti", "ilary-blasi",
-                "bebe-vio", "luis", "parids-zarei", "martina-maccherone", "rachel-zeilic" };
+        String[] guestList = { "Dua Lipa", "Paris Hilton", "Manuel Agnelli", "J-ax", "Francesco Totti", "Ilary Blasi",
+                "Bebe Vio", "Luis", "Parids Zarei", "Martina Maccherone", "Rachel Zeilic" };
+
+        for (int i = 0; i < guestList.length; i++) {
+            guestList[i] = guestList[i].trim().replace(" ", "-").toLowerCase();
+        }
+
         Scanner input = new Scanner(System.in);
 
         String userAnswer;
-
         System.out.print("Inserisci il tuo nome e cognome: ");
         userAnswer = input.nextLine();
+        input.close();
 
         String userAttempt = userAnswer.trim().replace(" ", "-").toLowerCase();
 
@@ -25,6 +30,7 @@ public class CheckGuest {
          * isAnEnvoy = true;
          * }
          * }
+         * 
          */
 
         while (!isAnEnvoy && index < guestList.length) {
